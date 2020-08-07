@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { addUser, deleteUser, getAllUsers } from "./store/usersAction";
 import UsersForm from "./components/UserForm";
 import UserInfo from "./components/UserInfo";
+import {logoutUser } from './store/authAction'
 // import EditForm from './components/EditForm';
 export class App extends Component {
   addNewUser = (newUser) => {
@@ -19,6 +20,7 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
+        <button onClick={this.props.logoutUser}>Logout</button>
         <UsersForm addUser={this.addNewUser} />
         <div className="App__User-info"></div>
         {this.props.users.map((user, index) => {
@@ -38,14 +40,18 @@ export class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  users: state.users,
-});
+const mapStateToProps = (state) => {
+  return {
+    users: state.usersState.users,
+  };
+ 
+};
 
 const mapDispatchToProps = {
   addUser: addUser,
   deleteUser: deleteUser,
   getAllUsers: getAllUsers,
+  logoutUser: logoutUser, 
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -23,6 +23,7 @@ const userReducer = (state = initialState, action) => {
 
     case "EDIT_USER":
       const updatedUserInfo = state.users.map((user) => {
+        console.log("jj");
         if (user.id === action.user_id) {
           return { ...user, ...action.updated_Info };
         } else {

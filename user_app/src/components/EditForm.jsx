@@ -40,42 +40,42 @@ class EditForm extends Component {
 
   render() {
     return (
-       <form onSubmit={this.handleSubmit} className="editForm">
+      <form onSubmit={this.handleSubmit} className="editForm">
         <div className="form-input">
-        <label>Name</label>
-        <input
-          type="text"
-          name="name"
-          value={this.state.name}
-          onChange={this.handleChange}
-        />
-      </div>
-      <div className="form-input">
-        <label>Email</label>
-        <input
-          type="email"
-          name="email"
-          value={this.state.email}
-          onChange={this.handleChange}
-        />
-      </div>
-      <div className="form-input">
-        <label>Gen</label>
-        <input
-          type="number"
-          name="gen"
-          value={this.state.gen}
-          onChange={this.handleChange}
-        />
-      </div>
-      <button type="submit">Update User</button>
-    </form>
+          <label>Name</label>
+          <input
+            type="text"
+            name="name"
+            value={this.state.name}
+            onChange={this.handleChange}
+          />
+        </div>
+        <div className="form-input">
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            value={this.state.email}
+            onChange={this.handleChange}
+          />
+        </div>
+        <div className="form-input">
+          <label>Gen</label>
+          <input
+            type="number"
+            name="gen"
+            value={this.state.gen}
+            onChange={this.handleChange}
+          />
+        </div>
+        <button type="submit">Update User</button>
+      </form>
     );
   }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  user: state.users.find((user) => user.id === ownProps.match.params.id),
+  user: state.usersState.users.find((user) => user.id === ownProps.match.params.id),
 });
 
 const mapDispatchToProps = {
