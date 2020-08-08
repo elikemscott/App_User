@@ -20,7 +20,7 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <button onClick={this.props.logoutUser}>Logout</button>
+        <button className="btn btn-danger" id="logout" onClick={this.props.logoutUser}>Logout</button>
         <UsersForm addUser={this.addNewUser} />
         <div className="App__User-info"></div>
         {this.props.users.map((user, index) => {

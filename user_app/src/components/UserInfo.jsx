@@ -7,17 +7,17 @@ const UserInfo = ({ name, email, gen, id, removeUser }) => {
   };
   return (
     <div className="userInfo">
-      <h3>Name:{name}</h3>
-      <p>Email:{email}</p>
-      <h3>Gen{gen}</h3>
-      <button className="buttons" id="removeUser" onClick={handleClick}>
+      <h3>Name: {name}</h3>
+      <p>Email: {email}</p>
+      <p>Gen: {gen}</p>
+      <button className="buttons btn btn-danger btn-sm" id="removeUser" onClick={handleClick}>
         Remove User
       </button>
-      <button className="buttons" id="editUser">
+      <button className="buttons btn btn-primary btn-sm" id="editUser">
         <Link id="link" to={`/edit/${id}`}>
-          Edit User
+          <span className='edit-user'>Edit User</span> 
         </Link>
-      </button>
+      </button> <hr/>
     </div>
   );
 };
